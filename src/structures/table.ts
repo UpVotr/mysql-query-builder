@@ -2,7 +2,7 @@ import { Query, QueryPart } from "../syntax/builder";
 import { BufferConverted, DateConverted, EnumConverted, EnumValues, NumberConverted, StringConverted } from "../types/inferred";
 
 export class Table<C extends readonly Table.ColumnDef[], N extends string> {
-  constructor(private tableName: N, private columns: Table.UniqueColumnName<C>, private alias?: string) {
+  constructor(private tableName: N, private columns: Table.UniqueColumnName<C>, private key: string, private alias?: string) {
     if ([...new Set(columns.map(col => col.name))].length !== columns.length) throw new Error("Cannot have two columns with the same name!");
   }
 
@@ -68,6 +68,10 @@ export class Table<C extends readonly Table.ColumnDef[], N extends string> {
       ]),
       {
         type: "rparen"
+      },
+      {
+        type: "raw",
+        value: this.key
       }
     ]).build();
   }
