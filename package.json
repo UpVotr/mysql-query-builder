@@ -1,6 +1,6 @@
 {
   "name": "@upvotr/mysql-query-builder",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "A Node.js MySQL query builder",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
