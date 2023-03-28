@@ -1,0 +1,41 @@
+{
+  "name": "@upvotr/mysql-query-builder",
+  "version": "1.0.4",
+  "description": "A Node.js MySQL query builder",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "test": "ts-node src/test.ts",
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/UpVotr/mysql-query-builder.git"
+  },
+  "keywords": [
+    "mysql",
+    "query",
+    "builder",
+    "sql"
+  ],
+  "author": "Errorgamer2000",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/UpVotr/mysql-query-builder/issues"
+  },
+  "homepage": "https://github.com/UpVotr/mysql-query-builder#readme",
+  "devDependencies": {
+    "prettier": "^2.8.4",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.9.5"
+  },
+  "dependencies": {
+    "@types/node": "^18.14.6"
+  },
+  "peerDependencies": {
+    "mysql2": "^3.2.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
