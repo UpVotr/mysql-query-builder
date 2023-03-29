@@ -14,6 +14,14 @@ export class Table<C extends readonly Table.ColumnDef[], N extends string> {
     return this.alias ? `\`${this.tableName}\` \`${this.alias}\`` : `\`${this.tableName}\``;
   }
 
+  toString() {
+    return this.aliasedName();
+  }
+
+  valueOf() {
+    return this.aliasedName();
+  }
+
   column(name: C[number]["name"]): string {
     return this.alias ? `\`${this.alias}\`.\`${name}\`` : `\`${name}\``;
   }
