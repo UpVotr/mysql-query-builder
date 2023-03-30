@@ -69,7 +69,7 @@ export class Table<C extends readonly Table.ColumnDef[], N extends string> {
               type: "columndef",
               name: col.name,
               valType: col.type,
-              null: col.notNull ?? true,
+              null: !col.notNull,
               default: col.default ?? null
             },
         ...(idx !== arr.length - 1 ? [{ type: "comma" as const }] : [])
