@@ -74,12 +74,17 @@ export class Table<C extends readonly Table.ColumnDef[], N extends string> {
             },
         ...(idx !== arr.length - 1 ? [{ type: "comma" as const }] : [])
       ]),
+      ...(this.key
+        ? [
+            { type: "comma" as const },
+            {
+              type: "raw" as const,
+              value: this.key
+            }
+          ]
+        : []),
       {
         type: "rparen"
-      },
-      {
-        type: "raw",
-        value: this.key
       }
     ]).build();
   }
